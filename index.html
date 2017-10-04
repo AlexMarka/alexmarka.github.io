@@ -1,0 +1,2314 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <title>ReMarketing</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="js/MockupSlideshow/css/mockup3.css">
+    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="js/jquery-1.12.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+
+<style>
+    .blackButton{
+        background-color: #000;
+    }
+    #congratulationsPopup .modal-body p{
+        font-size: 16px;
+    }
+</style>
+
+<div class="modal fade" id="congratulationsPopup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="min-height: 0;">
+            <div class="modal-header" style="border: 0;">
+                <h2 class="modal-title">Ура!!!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Вы успешно зарегистрировались на фестиваль, мы свяжемся с вами в ближайшее время.</p>
+                <p>Не терпится стать спасателем? Жми оплатить и ты станешь еще на один шаг ближе.</p>
+            </div>
+            <div class="modal-footer" style="border: 0;">
+                <div class="row">
+                    <div class="col-md-3 pull-right" id="paymentForm">
+
+                    </div>
+                    <div class="col-md-3 pull-right">
+                        <button class="custom-button ripple scroll-down" data-dismiss="modal" onclick="$('#congratulationsPopup').modal('hide');">
+                            Закрыть
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="successPopup">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="min-height: 0;">
+            <div class="modal-header" style="border: 0;">
+                <h2 class="modal-title">Ура!!!</h2>
+            </div>
+            <div class="modal-body">
+                <p>Вы настоящий спасатель, мы свяжемся с вами в ближайшее время.</p>
+            </div>
+            <div class="modal-footer" style="border: 0;">
+                <div class="row">
+                    <div class="col-md-3 pull-right">
+                        <a href="/" class="custom-button ripple scroll-down" style="display: block;text-align: center;">
+                            Закрыть
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $("#successPopup").modal("show");
+</script>
+<!-- Header -->
+<header class="header">
+
+    <div class="container">
+        <div class="row">
+
+            <div class="header__logoBlock hidden-xs hidden-sm col-md-3 col-lg-4">
+                <a class="scroll-down" href=".orange-angle">
+                    <img src="images/svg-png/logo.png" alt="">
+                </a>
+            </div>
+
+            <div class="header__nav col-md-7 col-lg-6">
+                <nav class="navbar">
+                        <div class="navbar-header">
+
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_menu" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <a class="navbar-brand scroll-down hidden-md hidden-lg" href=".orange-angle">
+                                <img src="images/svg-png/header-white-logo.png">
+                            </a>
+
+                        </div>
+
+                        <div class="collapse navbar-collapse" id="main_menu">
+                            <ul>
+                                <li class="header__nav__li"><a class="scroll-down" href=".main-section">О ФЕСТИВАЛЕ</a></li>
+                                <li class="header__nav__li"><a class="scroll-down" href=".speakers">СПИКЕРЫ</a></li>
+                                <li class="header__nav__li"><a class="scroll-down" href=".program">ПРОГРАММА</a></li>
+                                <li class="header__nav__li"><a class="scroll-down" href=".save-your-brand">ЦЕНА</a></li>
+                                <li class="header__nav__li"><a class="scroll-down" href=".registration">РЕГИСТРАЦИЯ</a></li>
+                                <li class="header__nav__li"><a class="scroll-down" href=".footer">КОНТАКТЫ</a></li>
+                            </ul>
+
+                        </div><!-- /.navbar-collapse -->
+                </nav>
+            </div>
+
+            <div class="header__help hidden-xs hidden-sm col-md-2">
+                <button class="custom-button ripple scroll-down" href=".registration">
+                    ПОМОЧЬ
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</header>
+<!-- Header End -->
+
+<!-- Content -->
+
+<div class="content">
+
+    <div class="angle-block">
+        <div class="container">
+            <div class="row">
+
+                <div class="orange-angle">
+                    <div class="angle"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<!--  === MAIN BANNER ===  -->
+
+    <figure class="main-Banner">
+
+        <div class="prev">
+            <div class="arrow-down">
+                <div class="square-left"></div>
+                <i class="arrow"></i>
+                <div class="square-right"></div>
+            </div>
+        </div>
+        <div class="next">
+            <div class="arrow-down">
+                <div class="square-left"></div>
+                <i class="arrow"></i>
+                <div class="square-right"></div>
+            </div>
+        </div>
+
+        <div id="wrap" class="wrap">
+            <div id="mobile" class="mobile">
+                <ul id="slideshow" class="slideshow">
+
+                    <!--<li class="slideshow__item"><img src="images/carousel-item.png" alt=""></li>-->
+
+                    <li class="slideshow__item"><img src="images/morozhenko.jpg" alt=""></li>
+
+                    <li class="slideshow__item"><img src="images/photo_3.jpg" alt=""></li>
+
+                </ul>
+            </div>
+        </div>
+
+    </figure>
+
+
+<!--  === TOP PARTNERS ===  -->
+
+    <div class="hidden-xs top-partners-row">
+        <div class="grey-background"></div>
+        <div class="container">
+            <div class="row row-flex">
+
+                <div class="top-partner col-xs-6 col-sm-2">
+                    <a href="http://bbdo.ua/">
+                        <div class="top-partner__img">
+                            <img src="images/svg-png/BBDO_logo.jpg" alt="">
+                        </div>
+                        <div class="top-partner__name">
+                            креативный партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="top-partner col-xs-6 col-sm-2">
+                    <a href="http://www.yaposhka.kh.ua/">
+                        <div class="top-partner__img">
+                            <img src="images/svg-png/footer_Yaposhka.png" alt="">
+                        </div>
+                        <div class="top-partner__name">
+                            генеральный партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="top-partner col-xs-6 col-sm-2">
+                    <a href="https://klmgroup.com.ua/">
+                        <div class="top-partner__img">
+                            <img src="images/svg-png/footer_Leading.png" alt="">
+                        </div>
+                        <div class="top-partner__name">
+                            организатор
+                        </div>
+                    </a>
+                </div>
+
+                <div class="top-partner col-xs-6 col-sm-2">
+                    <a href="http://gladhead.com/">
+                        <div class="top-partner__img">
+                            <img src="images/svg-png/footer_GleadHead.png" alt="">
+                        </div>
+                        <div class="top-partner__name">
+                            дизайн партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="top-partner col-xs-12 col-sm-2">
+                    <a href="http://www.studiomarka.com/">
+                        <div class="top-partner__img">
+                            <img src="images/svg-png/footer_Marka.png" alt="">
+                        </div>
+                        <div class="top-partner__name">
+                            диджитал партнер
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+<!--  === ABOUT ===  -->
+
+    <main class="main-section">
+
+        <div class="main-top">
+
+            <div class="container">
+                <div class="row row-flex">
+
+                    <div class="hidden-xs col-sm-4 col-md-3">
+
+                        <div class="ice-cream-img"> <img src="images/svg-png/ice-cream.png" alt=""> </div>
+
+                    </div>
+
+                    <div class="about col-xs-12 col-sm-8 col-md-9">
+
+                        <h1> REMARKETING </h1>
+
+                        <div class="sub-title"> стань спасателем брендов </div>
+
+                        <p>
+                            Пока ты сидел в фейсбуке и медленно, но уверенно забывал все, что тебе рассказали   <br/>
+                            на предыдущем Re, ты перестал замечать одну очень важную вещь. Твоему бренду больно.<br/>
+                            Он страдает от крутости других и не может выбраться с маркетингового дна. С каждым  <br/>
+                            днем он все больше нуждается в твоей помощи. Настало время для активных действий.   <br/>
+                            <span> Помоги своему бренду – приди на XI Remarketing! </span>
+                        </p>
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="main-bottom">
+
+            <div class="container">
+                <div class="row row-flex">
+
+                    <div class="can-be-block col-xs-12 col-sm-8 col-sm-offset-4 col-md-offset-4">
+
+                        <div class="can-be-rescuer">
+СПАСИ СВОЙ БРЕНД,<br>ЕСЛИ ТЫ
+                        </div>
+
+                    </div>
+
+                    <div class="col-xs-12 col-sm-9 col-md-7">
+                        <div class="problems-list">
+                            <ul>
+                                <li>Маркетолог, а у твоей компании падают продажи;</li>
+                                <li>PR-менеджер, а твой бренд тонет в негативе;</li>
+                                <li>Рекламист, а твой рекламный бюджет прогорел;</li>
+                                <li>Web-специалист, а твоё SEO не оптимизирует;</li>
+                                <li>Бренд-менеджер, а твой бренд страдает;</li>
+                                <li>Бизнесмен, а твой бизнес терпит крушение;</li>
+                                <li>SMM-специалист, а твои группы атакуют боты.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-3 col-md-5">
+                        <div class="badge-img">
+                            <img src="images/svg-png/badge.jpg" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!--  === SPEAKERS ===  -->
+
+    <section class="speakers">
+
+        <div class="speakers-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-name col-md-offset-2 col-lg-offset-3 col-sm-8 col-md-9">
+                        <h2>ХЕДЛАЙНЕРЫ</h2>
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/kojevnikov.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Сергей Кожевников</div>
+
+                            <div class="speaker-status">Креативный директор BBDO Moscow</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    До 2011 года Сергей работал в ведущих рекламных агентствах Украины.
+                                    Карьеру в BBDO начал с должности Creative Group Head, которую занимал в 2011-2013 гг. Затем перешел на позицию Deputy Creative Director, а с 2014 года является креативным директором агентства BBDO Moscow.
+                                    В портфолио Сергея представлены успешные кампании, созданные для таких крупнейших клиентов российского рекламного рынка, как Carlsberg, Tuborg, Медиа Маркт, Клинский, МКБ, Сбербанк, Bayer, PepsiCo, Pfizer, Эльдорадо, Mercedes-Benz, UNAIDS, Exxon Mobil, Profi.ru, Инмарко и др.
+                                    Работы Сергея Кожевникова были удостоены наград на многих фестивалях, в том числе Epica, Cristal Festival, Red Apple, Golden Drum, Golden Hammer, EFFI, KIAF и др.
+                                    Также Сергей Входил в жюри фестивалей KIAF (2015 г.), Идея! (2014 г.), Red Apple (2012 г.).
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/gut.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Игорь Гут</div>
+
+                            <div class="speaker-status">партнер DYB | Develop Your Business</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    Системний дослідник українського бізнесу.
+                                    Стратегічний маркетинг та бізнес-моделі є його ключовими компетенціями.
+                                    Поєднуючи успішний бізнес-досвід з науковим підходом,
+                                    Ігор спрощує складні моделі до практичних інструментів<br/><br/>
+
+                                    З 2011 року керує DYB | Develop Your Business – українсько-шведським проектом для власників бізнесу.
+                                    У програмах DYB Ukraine взяли участь понад 500 компаній.<br/><br/>
+
+                                    З 2003 по 2010 директор зі стратегічного розвитку і маркетингу BROCARD Ukraine
+                                    (увійшла до топ-10 найефективніших у рітейлі (Forbes) та до топ-100 найприбутковіших компаній України (delo.ua).
+                                    <br/><br/>
+                                    Ігор входить в Advisory Board низки українських та міжнародних компаній. Засновник DYB Business Club.
+                                    Кандидат економічних наук, захистив дисертацію у сфері поведінки споживачів.
+                                    Член Несторівської групи (незалежне об’єднання інтелектуалів, націлене на створення візії України).
+                                    Член правління МФВ (є частиною Open Society Foundation, заснованої Джорджем Соросом).
+
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow-orange">
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!--  == STRATEGIC MARKETING ==  -->
+
+
+        <div class="speakers-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-name col-md-offset-2 col-lg-offset-3 col-sm-8 col-md-9">
+                        <h2>STRATEGIC MARKETING</h2>
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/zingerman.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Евгений Зингерман</div>
+
+                            <div class="speaker-status">Партнер бренд-бутика Тень. Специалист по брендингу.</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    Евгений Зингерман – партнер бренд-бутика <a href="https://www.facebook.com/tenbranding/">Тень</a>. Стратег, специалист по
+                                    брендингу, коммуникациям и digital. Евгений работал в крупных
+                                    локальных агентствах страны как сотрудник и независимый консультант,
+                                    является куратором курса и преподавателем в школе <a href="https://www.facebook.com/bazilikschool/">Bazilik</a>.
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/tomin.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Олег Томин</div>
+
+                            <div class="speaker-status">Собственник и креативный директор BART and FINK</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    Собственник и креативный директор BART and FINK
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="arrow-orange">
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- == ADVERTISING & DESIGN == -->
+
+        <div class="speakers-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-name col-md-offset-2 col-lg-offset-3 col-sm-8 col-md-9">
+                        <h2>ADVERTISING & DESIGN</h2>
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/pashuk.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Пащук Лидия</div>
+
+                            <div class="speaker-status">Руководитель школы предпринимательства K.Fund.</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    кандидат економічних наук, доцент кафедри міжнародної економіки
+                                    та маркетингу Київського національного університету імені Тараса
+                                    Шевченка, Міжнародного інституту бізнесу, сертифікований викладач
+                                    Чартерного інституту маркетингу  (CIM, Chartered Institute of Marketing,
+                                    Великобританія), керівник Школи малого і середнього підприємництва у K.Fund.
+                                    <br/>
+                                    Має диплом Чартерного інституту маркетингу, CIM Professional Diploma in Marketing.
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/avetisov.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Егор Аветисов</div>
+
+                            <div class="speaker-status">- Креативный директор ПриватБанка.</div>
+
+                            <div class="for-modal">
+
+                                <p>
+
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/dmitrenko.png" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Николай Дмитренко</div>
+
+                            <div class="speaker-status">- Креативный директор ПриватБанка.</div>
+
+                            <div class="for-modal">
+
+                                <p>
+
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="arrow-orange">
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- == INTERNET-MARKETING == -->
+
+        <div class="speakers-block">
+            <div class="container">
+                <div class="row">
+
+                    <div class="section-name col-md-offset-2 col-lg-offset-3 col-sm-8 col-md-9">
+                        <h2>INTERNET-MARKETING</h2>
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/kucuruba.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Карина Куцуруба</div>
+
+                            <div class="speaker-status">Должность SMM Group Head в 1+1.</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    В SMM и digital уже более 3х лет. За плечами опыт работы с Nestle,
+                                    Heineken, Garnier, Rowenta, Inkerman, Lillet, и другими брендами.
+                                    Больше двух лет работала в digital-агентствах, последнее из которых
+                                    — Liquid 7 (Agama Digital Group), самое эффективное агентство в
+                                    Украине (по версии EFFIE Awards 2016-2017гг.) До недавнего времени
+                                    работала в Укрпоште в эпоху перемен :) Сегодня — SMM head в 1+1 медиа.
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/kazarina.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Александра Казарина</div>
+
+                            <div class="speaker-status">Head of Media Department DA Postmen</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    Head of Media Department DA Postmen<br/>
+                                    Сертифицированный партнер Google AdWords, Google Analytics.
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="speaker-card col-sm-6 col-md-3">
+
+                        <figure class="speaker-photo effect-julia">
+                            <img src="images/kachkarda.jpg" alt="">
+
+                            <figcaption>
+                                <div>
+                                    <p>узнать больше информации</p>
+                                    <p>об этом спикере</p>
+                                </div>
+                            </figcaption>
+
+                        </figure>
+
+                        <div class="speaker-desc">
+
+                            <div class="speaker-name">Юрий Качкарда</div>
+
+                            <div class="speaker-status">Управляющий партнер digital-агентства Smartica/Skykillers</div>
+
+                            <div class="for-modal">
+
+                                <p>
+                                    Управляющий партнер digital-агентства Smartica/Skykillers, основатель и партнер
+                                    интернет-медиа агентства Qreachers. Номер 3 в рейтинге эффективности Digital-агентств 2016 года.
+                                    В маркетинговых коммуникациях 15 лет, из них уже более 8 лет - в цифровом маркетинге.
+                                    Начинал карьеру ассистентом аккаунт-менеджера. Прошел путь от создания нового
+                                    агентства к выведению его в лидеры рынка. Клиенты агентств представлены в Украине, Казахстане и Англии.
+                                    На данный момент занимается стратегическим развитием цифровых сервисов и медиа в агентских бизнесах.
+                                </p>
+
+                                <!--<div class="them">-->
+                                <!--бла бла бла-->
+                                <!--</div>-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="arrow-orange">
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade speaker_modal" id="speaker_modal" tabindex="-1" role="dialog" aria-labelledby="speaker_modal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+
+                    <div class="close" data-dismiss="modal" aria-label="Close">
+                        <div class="close-square-top-left"></div>
+                        <div class="close-square-top-right"></div>
+                        <div class="cross">
+                            <span class="close-line"></span>
+                            <span class="close-line"></span>
+                        </div>
+                        <div class="close-square-bottom-left"></div>
+                        <div class="close-square-bottom-right"></div>
+                    </div>
+
+                    <div class="modal-photo">
+
+                        <div class="modal-decoration-lines-top">
+                            <div class="one-line"></div>
+                            <div class="one-line"></div>
+                        </div>
+
+                        <div class="modal-photo-img">
+                            <img src="images/modal_speaker.png" alt="">
+
+                        </div>
+
+                        <div class="arrows-white">
+
+                            <div class="arrow-down">
+
+                                <div class="square-left"></div>
+
+                                <i class="arrow"></i>
+
+                                <div class="square-right"></div>
+
+                            </div>
+
+                            <div class="arrow-down">
+
+                                <div class="square-left"></div>
+
+                                <i class="arrow"></i>
+
+                                <div class="square-right"></div>
+
+                            </div>
+
+                            <div class="arrow-down">
+
+                                <div class="square-left"></div>
+
+                                <i class="arrow"></i>
+
+                                <div class="square-right"></div>
+
+                            </div>
+
+                            <div class="arrow-down">
+
+                                <div class="square-left"></div>
+
+                                <i class="arrow"></i>
+
+                                <div class="square-right"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-desc">
+
+                        <h2>ИМЯ СПИКЕРА</h2>
+
+                        <p>
+                            подробная информация о спикере
+                        </p>
+
+                        <!--<div class="them">-->
+                        <!--Тема: нет темы-->
+                        <!--</div>-->
+
+                    </div>
+
+                    <div class="modal-decoration-lines-bottom">
+                        <div class="one-line"></div>
+                        <div class="one-line"></div>
+                    </div>
+
+                    <div class="modal-decoration-line-horizontal"></div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Modal END -->
+
+    </section>
+
+
+    <!-- === PROGRAM === -->
+
+
+    <section class="program">
+        <div class="container">
+            <div class="program-content">
+
+                <div class="parallelogram"></div>
+
+                <div class="row">
+
+                    <div class="section-name col-md-offset-2 col-lg-offset-3 col-sm-8 col-md-9">
+                        <h2>PROGRAM</h2>
+                    </div>
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>08:00</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>НАЧАЛО РЕГИСТРАЦИИ</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>09:00</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>ОТКРЫТИЕ ФЕСТИВАЛЯ</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>09:15</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>ВЫСТУПЛЕНИЕ ХЕДЛАЙНЕРОВ</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--time-item-->
+
+                    <!--<div class="time-item col-xs-12">-->
+
+                        <!--<div class="row row-flex">-->
+
+                            <!--<div class="time-item__time col-xs-2 col-md-1">-->
+
+                                <!--<time class="for-photo">09:00</time>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__line col-xs-2">-->
+
+                                <!--<div class="time-line for-photo"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__photo col-xs-8 col-sm-3 col-md-2">-->
+
+                                <!--<div class="time-line for-photo"></div>-->
+
+                                <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                            <!--</div>-->
+
+                            <!--<div class="col-xs-4 visible-xs"></div>-->
+
+                            <!--<div class="time-item__desc col-xs-8 col-sm-5 col-md-7">-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">Партнер, креативный директор O Escritório, Португалия </div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+
+                    <!--</div>-->
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>12:30</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>КОФЕ-БРЕЙК</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>12:45</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>ТОК-ШОУ</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>14:00</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>ОБЕД</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--time-item-->
+
+                    <div class="time-item col-xs-12">
+
+                        <div class="row row-flex">
+
+                            <div class="time-item__time col-xs-2 col-md-1">
+
+                                <time>15:00</time>
+
+                            </div>
+
+                            <div class="time-item__line col-xs-2">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                            <div class="time-item__title col-xs-8 col-sm-3 col-md-2">
+
+                                <h5>РАБОТА СЕКЦИЙ</h5>
+
+                            </div>
+
+                            <div class="time-item__desc hidden-xs col-sm-5 col-md-7">
+
+                                <div class="time-line"></div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--time-item-->
+
+                    <!--<div class="time-item col-xs-12">-->
+
+                        <!--<div class="vertical-line visible-sm"></div>-->
+
+
+                        <!--<div class="row row-flex">-->
+
+                            <!--<div class="time-item__time col-xs-2 col-md-1">-->
+
+                                <!--<time class="for-card">09:00</time>-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__line col-xs-2">-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__speaker-card col-xs-8 col-md-3">-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title">-->
+                                    <!--STRATEGIC <br class="hidden-sm hidden-xs"/>-->
+                                    <!--MARKETING-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+                            <!--</div>-->
+
+                            <!-- ============== -->
+
+                            <!--<div class="col-xs-4 visible-sm"></div>-->
+
+                            <!--<div class="time-item__speaker-card col-xs-12 col-sm-8 col-md-3">-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title">-->
+                                    <!--ADVERTISING <br class="hidden-sm hidden-xs"/>-->
+                                    <!--& DESIGN-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+
+                            <!--</div>-->
+
+                            <!-- =========== -->
+
+                            <!--<div class="col-xs-4 visible-sm"></div>-->
+
+
+                            <!--<div class="time-item__speaker-card col-xs-12 col-sm-8 col-md-3">-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title">-->
+                                    <!--INTERNET-<br class="hidden-sm hidden-xs"/>-->
+                                    <!--MARKETING-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+
+                            <!--</div>-->
+
+
+                        <!--</div>-->
+
+                    <!--</div>-->
+
+
+
+                    <!--time-item-->
+
+                    <!--<div class="time-item col-xs-12">-->
+
+                        <!--<div class="vertical-line visible-sm"></div>-->
+
+
+                        <!--<div class="row row-flex">-->
+
+                            <!--<div class="time-item__time col-xs-2 col-md-1">-->
+
+                                <!--<time class="for-card">09:00</time>-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__line col-xs-2">-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__speaker-card col-xs-8 col-md-3">-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title pseudo">-->
+                                    <!--STRATEGIC <br class="hidden-sm hidden-xs"/>-->
+                                    <!--MARKETING-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+                            <!--</div>-->
+
+                            <!-- ============== -->
+
+                            <!--<div class="col-xs-4 visible-sm"></div>-->
+
+
+                            <!--<div class="time-item__speaker-card col-xs-12 col-sm-8 col-md-3">-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title pseudo">-->
+                                    <!--ADVERTISING <br class="hidden-sm hidden-xs"/>-->
+                                    <!--& DESIGN-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+
+                            <!--</div>-->
+
+                            <!-- =========== -->
+
+                            <!--<div class="col-sm-4 visible-sm"></div>-->
+
+
+                            <!--<div class="time-item__speaker-card col-xs-12 col-sm-8 col-md-3">-->
+
+                                <!--<div class="vertical-line visible-xs"></div>-->
+
+                                <!--<div class="time-line for-card"></div>-->
+
+                                <!--<div class="time-item_big-title pseudo">-->
+                                    <!--INTERNET-<br class="hidden-sm hidden-xs"/>-->
+                                    <!--MARKETING-->
+                                <!--</div>-->
+
+                                <!--<div class="time-item__photo">-->
+
+                                    <!--<img src="images/svg-png/time-speaker.png" alt="">-->
+
+                                <!--</div>-->
+
+                                <!--<div class="speaker-name">АНДРЕЙ РОТОВСКИЙ</div>-->
+
+                                <!--<div class="speaker-status">-->
+                                    <!--Партнер, креативный директор <br/>-->
+                                    <!--O Escritório, Португалия-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-credo">-->
+
+                                    <!--Я креативный, какую хочу такую идею и выбираю-->
+
+                                <!--</div>-->
+
+
+                            <!--</div>-->
+
+
+                        <!--</div>-->
+
+                    <!--</div>-->
+
+
+                    <!--time-item-->
+
+                    <!--<div class="time-item col-xs-12">-->
+
+                        <!--<div class="row row-flex">-->
+
+                            <!--<div class="time-item__time col-xs-2 col-md-1">-->
+
+                                <!--<time class="for-photo">18:00</time>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__line col-xs-2 col-md-2">-->
+
+                                <!--<div class="time-line for-photo"></div>-->
+
+                            <!--</div>-->
+
+                            <!--<div class="time-item__photo col-xs-8 col-sm-3 col-md-2">-->
+
+                                <!--<div class="time-line for-photo"></div>-->
+
+                                <!--<img src="images/svg-png/arriba.png" alt="">-->
+
+                            <!--</div>-->
+
+                            <!--<div class="col-xs-offset-4 visible-xs"></div>-->
+
+                            <!--<div class="time-item__desc col-xs-8 col-sm-5 col-md-7">-->
+
+                                <!--<div class="speaker-name">-->
+                                    <!--МАСТЕР-КЛАСС ОТ ШКОЛЫ РЕКЛАМЫ И ДИЗАЙНА «БАГАЖ».-->
+                                    <!--КОТЁНОК БЕЗ ДВЕРЦЫ: ВОРКШОП О МЕТАФОРЕ-->
+                                <!--</div>-->
+
+                                <!--<div class="speaker-desc">-->
+                                    <!--Ограничение по людям: 30 человек. Метафора –-->
+                                    <!--главный инструмент, с которым работают креативщики.-->
+                                    <!--Именно этому инструменту своим успехом обязаны-->
+                                    <!--многие известные рекламные кампании. На лекции-->
+                                    <!--разберём, что такое хорошая метафора. Определим-->
+                                    <!--её признаки. Научимся искать и находить её удачные-->
+                                    <!--проявления. И наконец разберёмся, как можно-->
+                                    <!--использовать этот инструмент в работе. Лекторы:-->
+                                    <!--Андрей Мищенко и Стаська Падалка, копирайтеры-->
+                                    <!--креативного агентства Arriba!-->
+                                <!--</div>-->
+
+
+                            <!--</div>-->
+
+                        <!--</div>-->
+
+                    <!--</div>-->
+
+                    <div class="arrow-orange">
+
+                        <div class="arrow-down">
+
+                            <div class="square-left"></div>
+
+                            <i class="arrow"></i>
+
+                            <div class="square-right"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- === SAVE YOUR BRAND === -->
+
+
+    <section class="save-your-brand">
+
+        <div class="save-top">
+
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-sm-9">
+
+                        <div class="section-title">
+
+                            <h2>СПАСИ СВОЙ БРЕНД</h2>
+
+                            <div class="sub-title">купи билет и стань спасателем брендов</div>
+
+                        </div>
+
+                        <div class="date-price">
+
+                            <div class="date-price__item">
+
+                                <div class="date">до 11.10 </div>
+
+                                <div class="price">750</div>
+
+                            </div>
+
+                            <div class="date-price__item">
+
+                                <div class="date">до 23.10 </div>
+
+                                <div class="price">850</div>
+
+                            </div>
+
+                            <div class="date-price__item">
+
+                                <div class="date">до 01.11 </div>
+
+                                <div class="price">950</div>
+
+                            </div>
+
+                            <div class="date-price__item">
+
+                                <div class="date">до 02.11 </div>
+
+                                <div class="price">1 200</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="buy-ticket">
+
+                            <a class="scroll-down ripple" href=".registration">КУПИТЬ БИЛЕТ</a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="milk-img hidden-xs col-sm-3">
+
+                        <img src="images/svg-png/sad_milk.png" alt="">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div class="save-bottom">
+
+            <div class="container">
+
+
+                <div class="row row-flex">
+
+                    <div class="cookie-left col-xs-12 col-sm-4 col-md-3 col-lg-5">
+
+                        <div class="cookie-img"><img src="images/svg-png/cookies.png" alt=""> </div>
+
+                    </div>
+
+                    <div class="cookie-right col-sm-8 col-md-9 col-lg-7">
+
+                        <div class="section-title">
+
+                            <div class="title">ПЕЧЕНЬКИ</div>
+
+                            <div class="sub-title">для отважных спасателей</div>
+
+                            <div class="saver-list">
+
+                                <ol>
+
+                                    <li>
+
+                                        <div class="li-content">
+                                            <h4> ПОКАЖИ, ЧТО ТЫ ГОТОВ СПАСТИ СВОЙ БРЕНД </h4>
+
+                                            Сфотографируй себя в образе спасателя и опубликуй  в Facebook или Instagram
+                                            фото под хэштегом #спасательбрендов. Каждому участнику – скидка 10%, автору
+                                            самого креативного фото - 20%
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="li-content">
+
+                                            <h4> ОПУБЛИКУЙ СВОЁ ФОТО С ПЕЧАТНОЙ ПРОДУКЦИЕЙ RE . </h4>
+
+                                            Если ты переживал конец света, игрался инструментами, химичил, проходил
+                                            лабиринты, орудовал плёткой, взбадривал и приводил свой маркетинг в порядок
+                                            на предыдущих Re – докажи. Опубликуй фотографию с хештегом
+                                            #спасательбрендов, на которой ты держишь в руках печатную продукцию Re,
+                                            и получи скидку 10 %
+                                        </div>
+
+                                    </li>
+
+                                    <li>
+
+                                        <div class="li-content">
+
+                                            <h4> ПРИХОДИ НЕ ОДИН </h4>
+
+                                            А с кем-то ещё. Минимум с двумя. На компании от 3ёх человек действует
+                                            корпоративная  скидка – 10% от суммы.
+
+                                        </div>
+                                    </li>
+
+
+                                </ol>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- === REGISTRATION === -->
+
+
+    <section class="registration">
+
+        <div class="container">
+            <div class="row row-flex">
+
+                <div class="registration__social col-sm-2 col-md-3">
+
+                    <a class="ripple" href="https://www.facebook.com/Remarketing.ua/">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="ripple" href="https://www.instagram.com/remarketing.festival/">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+
+                </div>
+
+                <div class="registration-form col-sm-10 col-md-7">
+
+                    <div class="registration__title">
+
+                        <h2>РЕГИСТРАЦИЯ</h2>
+
+                        <div class="sub-title">Premier Palace Hotel Kharkiv<br>пр. Правды, 2, Харьков</div>
+
+                    </div>
+
+                    <form  method="post" id="registrationForm">
+
+                        <input type="text" class="form-control" name="name" required="required" placeholder="ФИО">
+                        <input type="email" class="form-control" name="email" required="required" placeholder="email">
+                        <input type="text" class="form-control" name="phone" required="required" placeholder="телефон">
+                        <input type="text" class="form-control" name="company" required="required" placeholder="компания">
+                        <input type="hidden" name="count" value="1"/>
+                        <input type="hidden" name="price" value="<?=$price?>"/>
+                        <div class="tickets-title">кол-во билетов</div>
+
+                        <div class="tickets">
+
+                            <div class="tickets-calc">
+
+                                <div class="plus-minus">
+
+                                    <div class="tickets-minus"> - </div>
+
+                                    <div class="tickets-quantity"> 1 </div>
+
+                                    <div class="tickets-plus"> + </div>
+
+                                </div>
+
+                                <div class="tickets-equally"> = </div>
+
+                                <div class="tickets-value"><?=$price?></div>
+
+                            </div>
+
+                            <button class="ripple" type="submit">КУПИТЬ БИЛЕТ</button>
+
+                        </div>
+
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- === PARTNERS === -->
+
+
+    <section class="main-partners">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="section-title col-xs-12">
+
+                    <h2>ПАРТНЕРЫ</h2>
+                  <div class="sub-title">лучшие компании всей Украины</div>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="http://bbdo.ua/">
+
+                        <div class="partner_name">
+                            креативный партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/svg-png/partners_BBDO.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="http://www.yaposhka.kh.ua/">
+
+                        <div class="partner_name">
+                            генеральный партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/svg-png/partners_Yaposhka.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="https://klmgroup.com.ua/">
+
+                        <div class="partner_name">
+                            организатор
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/svg-png/partners_Leading.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="http://gladhead.com/">
+
+                        <div class="partner_name">
+                            дизайн партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/svg-png/partners_GladHead.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="http://www.studiomarka.com/">
+
+                        <div class="partner_name">
+                            диджитал партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/svg-png/partners_Marka.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="http://pushkin-mafia.com/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/P_M.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="http://25.biz.ua/">
+
+                        <div class="partner_name">
+                            кофе партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/25CR_logo.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a class="no-link">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/Logo_Mediaclub.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="http://canape.ua/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/Canape_logo_new.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="https://kharkiv-palace.phnr.com/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/logo_Premier_Hotel_Kharkiv.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-4">
+
+                    <a href="http://megapolisplus.com.ua/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/megapolis_logo.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="https://vk.com/on_fridays">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/on_fridays_logo.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="https://ru-ru.facebook.com/iwant.event/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/i-want.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+                <div class="main-partners__item col-xs-6 col-sm-4 col-md-2">
+
+                    <a href="http://dyb.ua/">
+
+                        <div class="partner_name">
+                            партнер
+                        </div>
+
+                        <div class="partner_img">
+                            <img src="images/dyb.png" alt="">
+                        </div>
+
+                    </a>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+<!-- ======= CONTENT END ======= -->
+
+
+<!-- Footer -->
+
+
+<footer class="footer">
+
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+
+                <div class="footer-top__img footer-top__helicopter col-sm-4">
+                    <img src="images/svg-png/footer_helicopter.png" alt="">
+                </div>
+
+                <div class="footer-top__img footer-top__car hidden-xs col-sm-4">
+                    <img src="images/svg-png/footer-car.png" alt="">
+
+                </div>
+
+                <div class="footer-top__img footer-top__ship hidden-xs col-sm-4">
+                    <img src="images/svg-png/footer-ship.png" alt="">
+                </div>
+
+            </div>
+
+            <div class="row">
+
+                <div class="footer-top__contact col-sm-6 col-md-3">
+
+                    <div class="footer-top__contact_phone">
+                        050-40-07-500
+                    </div>
+
+                    <div class="footer-top__contact_desc">
+                        Александр Ивченко – по вопросам
+                        спонсорства
+                        <div class="footer-top__email">alek.ivchenko@gmail.com</div>
+                    </div>
+
+                </div>
+
+                <div class="footer-top__contact col-sm-6 col-md-3">
+
+                    <div class="footer-top__contact_phone">
+                        095-545-15-30
+                    </div>
+
+                    <div class="footer-top__contact_desc">
+                        Элина Гудыма – по вопросам
+                        медиапартнёрства
+                        <div class="footer-top__email">elinagudyma@gmail.com</div>
+                    </div>
+
+                </div>
+
+                <div class="footer-top__contact col-sm-6 col-md-3">
+
+                    <div class="footer-top__contact_phone">
+                        095-531-97-42
+                    </div>
+
+                    <div class="footer-top__contact_desc">
+                        Юлия Михайленко – по вопросам
+                        партнёрства
+                        <div class="footer-top__email">mihailenkoj@gmail.com</div>
+                    </div>
+
+                </div>
+
+                <div class="footer-top__contact col-sm-6 col-md-3">
+
+                    <div class="footer-top__contact_phone">
+                        050-888-55-30
+                    </div>
+
+                    <div class="footer-top__contact_desc">
+                        Марина Васильева – по вопросам
+                        участия
+                        <div class="footer-top__email">remarketing.kh@gmail.com</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-partners">
+        <div class="container">
+            <div class="row row-flex">
+
+                <div class="footer-partner col-xs-6 col-sm-4 col-md-2">
+                    <a href="http://bbdo.ua/">
+                        <div class="footer-partner__img">
+                            <img src="images/svg-png/footer_BBDO.png" alt="">
+                        </div>
+                        <div class="footer-partner__name">
+                            креативный партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="footer-partner col-xs-6  col-sm-4 col-md-3">
+                    <a href="http://www.yaposhka.kh.ua/">
+                        <div class="footer-partner__img">
+                            <img src="images/svg-png/footer_Yaposhka.png" alt="">
+                        </div>
+                        <div class="footer-partner__name">
+                            генеральный партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="footer-partner col-xs-6  col-sm-4 col-md-2">
+                    <a href="https://klmgroup.com.ua/">
+                        <div class="footer-partner__img">
+                            <img src="images/svg-png/footer_Leading.png" alt="">
+                        </div>
+                        <div class="footer-partner__name">
+                            организатор
+                        </div>
+                    </a>
+                </div>
+
+                <div class="footer-partner col-xs-6 col-sm-6 col-md-3">
+                    <a href="http://gladhead.com/">
+                        <div class="footer-partner__img">
+                            <img src="images/svg-png/footer_GleadHead.png" alt="">
+                        </div>
+                        <div class="footer-partner__name">
+                            дизайн партнер
+                        </div>
+                    </a>
+                </div>
+
+                <div class="footer-partner col-xs-12 col-sm-6 col-md-2">
+                    <a href="http://www.studiomarka.com/">
+                        <div class="footer-partner__img">
+                            <img src="images/svg-png/footer_Marka.png" alt="">
+                        </div>
+                        <div class="footer-partner__name">
+                            диджитал партнер
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+
+                <div class="footer-bottom__social col-sm-4 col-md-6">
+                    <a class="ripple" href="https://www.facebook.com/Remarketing.ua/">
+                        <i class="fa fa-facebook" aria-hidden="true"></i>
+                    </a>
+                    <a class="ripple" href="https://www.instagram.com/remarketing.festival/">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <div class="footer-bottom__design col-sm-4 col-md-3">
+                    <span>дизайн сайта –</span><br/>
+                    <a href="http://gladhead.com/">
+                        design studio Glad Head
+                    </a>
+                </div>
+
+                <div class="footer-bottom__powered col-sm-4 col-md-3">
+                    <span>разработка сайта –</span><br/>
+                    <a href="http://www.studiomarka.com/">
+                        web studio Marka.
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</footer>
+<!-- Footer end-->
+
+<!--<script src="js/owl.carousel.min.js"></script>-->
+<script src="js/MockupSlideshow/js/modernizr.custom.js"></script>
+<script src="js/MockupSlideshow/js/classie.js"></script>
+<script src="js/MockupSlideshow/js/main.js"></script>
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "gulp-test_project",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.2.2"
+  }
+}
